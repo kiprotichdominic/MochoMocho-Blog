@@ -23,7 +23,7 @@ function classNames(...classes) {
 
 function Navbar() {
     return (
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure as="nav" className="bg-gray-50">
             {({ open }) => (
                 <>
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -41,7 +41,7 @@ function Navbar() {
                                     </Disclosure.Button>
                                 </div>
                                 <div className="flex flex-shrink-0 items-center">
-                                    <a href="#" className="px-3 py-2 text-lg font-medium text-white">
+                                    <a href="#" className="px-3 py-2 text-lg font-medium text-black">
                                         MochoMocho
                                     </a>
                                 </div>
@@ -51,7 +51,7 @@ function Navbar() {
                                             key={item.name}
                                             href={item.href}
                                             className={classNames(
-                                                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                                item.current ? 'bg-gray-900 text-black' : 'text-black hover:bg-gray-700 hover:text-white',
                                                 'px-3 py-2 rounded-md text-sm font-medium'
                                             )}
                                             aria-current={item.current ? 'page' : undefined}
