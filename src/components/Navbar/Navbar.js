@@ -1,4 +1,5 @@
 import { Fragment } from 'react'
+import { Link } from "react-router-dom"
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { PlusIcon } from '@heroicons/react/20/solid'
@@ -11,7 +12,7 @@ const user = {
 }
 const navigation = [
     // { name: 'Dashboard', href: '#', current: true },
-    { name: 'Blog', href: '#', current: false },
+    { name: 'Blog', href: '/post', current: false },
 ]
 const userNavigation = [
     { name: 'Sign out', href: '#' },
@@ -41,15 +42,15 @@ function Navbar() {
                                     </Disclosure.Button>
                                 </div>
                                 <div className="flex flex-shrink-0 items-center">
-                                    <a href="#" className="px-3 py-2 text-lg font-medium text-black">
+                                    <Link to="/" className="px-3 py-2 text-lg font-medium text-black">
                                         MochoMocho
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="hidden md:ml-6 md:flex md:items-center md:space-x-4">
                                     {navigation.map((item) => (
-                                        <a
+                                        <Link
                                             key={item.name}
-                                            href={item.href}
+                                            to={item.href}
                                             className={classNames(
                                                 item.current ? 'bg-gray-900 text-black' : 'text-black hover:bg-gray-700 hover:text-white',
                                                 'px-3 py-2 rounded-md text-sm font-medium'
@@ -57,19 +58,18 @@ function Navbar() {
                                             aria-current={item.current ? 'page' : undefined}
                                         >
                                             {item.name}
-                                        </a>
+                                        </Link>
                                     ))}
                                 </div>
                             </div>
                             <div className="flex items-center">
                                 <div className="flex-shrink-0">
-                                    <button
-                                        type="button"
+                                    <Link to="createpost"
                                         className="relative inline-flex items-center rounded-md border border-transparent bg-indigo-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-800"
                                     >
                                         <PlusIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
                                         <span>Create Post</span>
-                                    </button>
+                                    </Link>
                                 </div>
                                 <div className="hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center">
 
