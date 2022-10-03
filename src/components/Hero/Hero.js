@@ -1,6 +1,6 @@
 function Hero() {
     return (
-        <div className="relative overflow-hidde">
+        <div className="relative overflow-hidden">
             <div className="relative pt-3 pb-10 sm:pb-24">
 
                 <main className="mx-auto mt-16 max-w-7xl px-4 sm:mt-24">

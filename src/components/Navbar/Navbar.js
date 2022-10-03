@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { PlusIcon } from '@heroicons/react/20/solid'
+import { HiOutlineLogin } from "react-icons/hi"
 
 const user = {
     name: 'Tom Cook',
@@ -69,6 +70,12 @@ function Navbar() {
                                     >
                                         <PlusIcon className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
                                         <span>Create Post</span>
+                                    </Link>
+                                    <Link to="login"
+                                        className="relative ml-4 inline-flex items-center rounded-md border border-transparent bg-indigo-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+                                    >
+                                        <HiOutlineLogin className="-ml-1 mr-2 h-5 w-5" aria-hidden="true" />
+                                        <span>Login</span>
                                     </Link>
                                 </div>
                                 <div className="hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center">
