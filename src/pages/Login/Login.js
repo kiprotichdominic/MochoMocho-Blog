@@ -1,6 +1,9 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
+import jwt from 'jwt-decode';
 
-function Login() {
+function Login({ authenticate }) {
+    const navigate = useNavigate()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
@@ -18,8 +21,10 @@ function Login() {
             body: JSON.stringify(data)
         })
         result = await result.json()
+        console.log(result);
         localStorage.setItem("token", result.token)
-        console.log(result.token);
+        navigate("/")
+        authenticate()
     }
 
     return (
